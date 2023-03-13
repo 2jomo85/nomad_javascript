@@ -1,14 +1,17 @@
-const h1 = document.querySelector("div.hello:first-child h1");
+// const loginForm = document.getElementById("login-form");
+// const loginInput = loginForm.querySelector("input");
+// const loginButton = loginForm.querySelector("button");
 
-function handleTitleClick() {
-  // const clickedClass = "active";
-  // if (h1.classList.contains(clickedClass)) {
-  //   h1.classList.remove(clickedClass);
-  // } else {
-  //   h1.classList.add(clickedClass);
-  // }
-  // toggle 메소드를 통해 위 코드를 대체
-  h1.classList.toggle("active");
+const loginInput = document.querySelector("#login-form input");
+const loginButton = document.querySelector("#login-form button");
+
+function onLoginBtnClick() {
+  const usename = loginInput.value;
+  if (usename === "") {
+    alert("Please write your name.");
+  } else if (usename.length > 15) {
+    alert("Your name is to long.");
+  }
 }
 
-h1.addEventListener("click", handleTitleClick);
+loginButton.addEventListener("click", onLoginBtnClick);
