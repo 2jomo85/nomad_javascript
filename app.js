@@ -1,13 +1,21 @@
-// const loginForm = document.getElementById("login-form");
-// const loginInput = loginForm.querySelector("input");
-// const loginButton = loginForm.querySelector("button");
-
+// #login-form => id
+// .login-form => Class
+const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
-const loginButton = document.querySelector("#login-form button");
 
-function onLoginBtnClick() {
+const link = document.querySelector("a");
+
+// JavaScript에서 이벤트의 관한 정보를 첫번째 인자로 넘겨준다.
+function onLoginSubmit(event) {
+  // 브라우저의 기본동작을 막는 함수
+  event.preventDefault();
   const username = loginInput.value;
   console.log(username);
 }
 
-loginButton.addEventListener("click", onLoginBtnClick);
+function handleLinkClick(event) {
+  event.preventDefault();
+}
+
+loginForm.addEventListener("submit", onLoginSubmit);
+link.addEventListener("click", handleLinkClick);
