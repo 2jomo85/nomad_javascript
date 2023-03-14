@@ -15,6 +15,8 @@ function onLoginSubmit(event) {
   greeting.innerText = `Hello ${username}`;
   //greeting.innerText = "Hello " + username;
   greeting.classList.remove(HIDDEN_CLASSNAME);
+
+  localStorage.setItem("username", username);
 }
 
 function handleLinkClick(event) {
